@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header class="bg-purple-400 visible max-sm:hidden">
+        <ul class="flex flex-row justify-around text-white">
+            <li class="uppercase hover:bg-purple-950 py-4 px-2"><a href="" class="link h-full">home</a></li>
+            <li class="uppercase hover:bg-purple-950 py-4 px-2"><a href="" class="link h-full">contact us</a></li>
+            <li class="uppercase hover:bg-purple-950 py-4 px-2"><a href="" class="link h-full">shopping</a></li>
+            <li class="uppercase hover:bg-purple-950 py-4 px-2"><a href="" class="link h-full">sing in</a></li>
+        </ul>
+    </header>
+    <div class="sm-size relative">
+        <div class="hamburger hidden bg-slate-800 w-16 h-16 rounded-full origin-center
+        fixed right-4 top-4 shadow-2xl text-center max-sm:flex max-sm:items-center max-sm:
+        justify-center cursor-pointer transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                class="w-10 h-w-10 openIcon">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                class="w-10 h-w-10 hidden closeIcon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <div class="menu hidden text-center rounded-full hidden mt-32">
+            <ul>
+                <li class="list bg-slate-400 border-b-2 border-black"><a href="#">Home</a></li>
+                <li class="list bg-slate-400 border-b-2 border-black"><a href="#">Home</a></li>
+                <li class="list bg-slate-400 border-b-2 border-black"><a href="#">Home</a></li>
+                <li class="list bg-slate-400 border-b-2 border-black"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="model.js"></script>
+</body>
+
+</html>
