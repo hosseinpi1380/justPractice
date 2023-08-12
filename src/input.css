@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base{
+    li{
+        @apply bg-white w-full py-3 rounded-sm my-1 list-none
+    }
+}

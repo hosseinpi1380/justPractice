@@ -1,29 +1,60 @@
-const state = {
-    result: [],
-    response: {}
+const $ = document;
+const basket = [
+  "javascript",
+  "react",
+  "node js",
+  "sass",
+  "tailwind",
+  "css",
+  "html",
+  "next.js",
+  "nothing",
+  "jasem",
+  "hamed",
+  "taha",
+  "sara",
+  "nima",
+  "reza",
+  "amir",
+  "saman",
+  "lorem",
+  "leila",
+  "narima panahi",
+  "ahmad",
+  "iman",
+  "fateme",
+  "farzad",
+  "farhad",
+  "nima",
+  "nasrin",
+  "nazanin",
+];
+
+let result = [];
+const btn = document.querySelector("submit-btn");
+const input = document.querySelector(".input");
+const form = document.querySelector("form");
+const ulElement = $.querySelector("ul");
+
+let letterIntered = "";
+form.addEventListener("keydown", (e) => {
+  ulElement.innerHTML = "";
+  if (e.key != "Backspace") {
+    letterIntered += e.key;
+    generateTemp(letterIntered);
+  } else if (e.key == "Backspace") {
+    letterIntered = letterIntered.slice(0, -1);
+    generateTemp(letterIntered);
+  }
+  console.log(letterIntered);
+});
+function generateTemp(letter) {
+  const filt = basket.filter((el) => el[0] == letter);
+  filt.forEach((el) =>
+    ulElement.insertAdjacentHTML(
+      "afterbegin",
+      `
+        <li class="w-full bg-white text-black p-4">${el}</li>`
+    )
+  );
 }
-const apiCall = async function (ing) {
-    try {
-        const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${ing}`);
-        const data = await res.json();
-        let result = data;
-        let { recipes } = data.data
-        state.response = recipes.map(el => ({
-            id: el.id, title: el.title, publisher: el.publisher, image: el.image_url
-        }));
-        
-        
-        
-    } catch (err) {
-        console.log(err);
-        throw err
-    }
-}
-apiCall('pizza');
-
-// const renderSearchItem=function(){
-//     document.querySelector('ul').insertAdjacentHTML('afterbegin',markup)
-// }
-
-
-
