@@ -575,9 +575,11 @@ img {
 }
 
 .card {
-  position: relative;
   margin: 0.75rem;
-  width: 250px;
+  display: flex;
+  flex: 1 1 0%;
+  flex-basis: 250px;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 1rem;
   --tw-bg-opacity: 1;
@@ -607,16 +609,12 @@ img {
   position: absolute;
 }
 
-.relative {
-  position: relative;
+.bottom-0 {
+  bottom: 0px;
 }
 
 .right-2 {
   right: 0.5rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
 }
 
 .m-3 {
@@ -649,16 +647,24 @@ img {
   width: 80%;
 }
 
-.w-\[250px\] {
-  width: 250px;
-}
-
 .w-full {
   width: 100%;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.basis-\[250px\] {
+  flex-basis: 250px;
+}
+
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-wrap {

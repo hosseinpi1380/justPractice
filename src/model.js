@@ -35,7 +35,9 @@ const btn = document.querySelector("submit-btn");
 const input = document.querySelector(".input");
 const form = document.querySelector("form");
 const ulElement = $.querySelector("ul");
-
+form.addEventListener('submit',e=>{
+  e.preventDefault()
+})
 let letterIntered = "";
 form.addEventListener("keydown", (e) => {
   ulElement.innerHTML = "";
@@ -54,7 +56,17 @@ function generateTemp(letter) {
     ulElement.insertAdjacentHTML(
       "afterbegin",
       `
-        <li class="w-full bg-white text-black p-4">${el}</li>`
+        <li class="w-full bg-white text-black p-4 flex flex-row justify-between">${el}
+        <button class="bg-blue-700 text-white p-2 rounded-full" onclick="addtoBasket(this)">Add to Cart</button>
+        
+        </li>`
     )
   );
+}
+let shoppingBasket=[];
+function addtoBasket(e){
+  // console.log(e.closest('li'));
+  let clicked=e.closest('li');
+  shoppingBasket=[...shoppingBasket,clicked]
+  console.log(shoppingBasket);
 }
